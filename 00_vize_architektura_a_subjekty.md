@@ -33,8 +33,26 @@ Celý systém je vnitřně provázán přes jednotný číselník entitních typ
 
 Všechny primární entity i uživatelské tabulky využívají pro identifikaci a vzájemné propojování koncept **složeného klíče**:
 
-* **`CPCx` (Číslo profilu / Klientského klastru):** Identifikátor profilu nebo databázového klastru (např. `CPCF`, `CPCP`, `CPCN`, `CPCT`).
-* **`Cx` (Unikátní ID záznamu):** Unikátní číslo záznamu v rámci daného profilu (např. `CF`, `CP`, `CN`, `CT`).
+* **`CPCX` (Číslo profilu / Klientského klastru):** Identifikátor profilu nebo databázového klastru (např. `CPCF`, `CPCP`, `CPCN`, `CPCT`).
+* **`CX` (Unikátní ID záznamu):** Unikátní číslo záznamu v rámci daného profilu (např. `CF`, `CP`, `CN`, `CT`).
 
 ### Křížové obousměrné vazby:
 Díky univerzálnímu navazování přes trojici polí **`ID1`** (typ subjektu 1, 2, 4), **`CPCX1`** a **`CX1`** dokáže systém propojovat jakýkoliv záznam (např. fakturu nebo servisní výkaz) s libovolnou primární entitou. Vzniklé vazby jsou plně **obousměrné** a přístupné jak z karty firmy, tak z detailu smlouvy či projektu.
+
+---
+
+## 4. Kompletní architektura
+Profil (Název - většinou podle jména firmy a číslo profilu)
+├── 01_Uživatel/
+│   ├── Login, Barva, Oddělení, Skupina, Práva, Zobrazení adresáře, Nastavení diáře
+│   ├── Informace o uživateli = Dodatky -> Datum narození, adresa, zaměstnanecké číslo a podobně
+│   └── Uživatelské agendy = Tabulky -> řádky se váží na uživatele a primárně každý uživatel vidí pouze svoje řádky - Práva na sdílení řádků.
+├── 02_Organizace/Firmy
+│   ├── 01_Kontakty (Vazba na osoby - Priorita, Funkce, Oddělení) + Poznámka 
+│   ├── 02_Dodatky + Skupiny dodatků
+│   ├── 03_formulas_events.md    # Syntaxe výpočtů a spouštění procedur
+│   └── 04_master_detail.md      # Jak se staví 1:N tabulky
+└── 03_user_guides/
+    ├── 01_servis_a_stroje.md    # Proces servisu, MTH, výkazů
+    ├── 02_kniha_jizd.md         # Proces evidování jízd a vyúčtování
+    └── 03_marketing_emails.md   # Šablony, odosílání, statistiky
