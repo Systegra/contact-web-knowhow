@@ -42,11 +42,15 @@ Díky univerzálnímu navazování přes trojici polí **`ID1`** (typ subjektu 1
 ---
 
 ## 4. Kompletní architektura
+
 Profil (Název - většinou podle jména firmy a číslo profilu)
+
 ├── 01_Uživatel/
+
 │   ├── Login, Barva, Oddělení, Skupina, Práva, Zobrazení adresáře, Nastavení diáře
 │   ├── Informace o uživateli = Dodatky -> Datum narození, adresa, zaměstnanecké číslo a podobně
 │   └── Uživatelské agendy = Tabulky -> řádky se váží na uživatele a primárně každý uživatel vidí pouze svoje řádky - Práva na sdílení řádků.
+
 ├── 02_Organizace/Firmy
 │   ├── 01_Kontakty (Vazba na osoby - Priorita, Funkce, Oddělení) + Poznámka 
 │   ├── 02_Dodatky + Skupiny dodatků
@@ -56,6 +60,7 @@ Profil (Název - většinou podle jména firmy a číslo profilu)
 │   ├── 06_Zatřídění
 │   ├── 07_Emaily
 │   └── 08_Události (vazba na Diář)
+
 └── 03_Osoby/
 │   ├── 01_Kontakty (Vazba na firmy - Priorita, Funkce, Oddělení) + Poznámka 
 │   ├── 02_Dodatky + Skupiny dodatků
@@ -65,6 +70,7 @@ Profil (Název - většinou podle jména firmy a číslo profilu)
 │   ├── 06_Zatřídění
 │   ├── 07_Emaily
 │   └── 08_Události (vazba na Diář)
+
 └── 04_Diář/
 
 
