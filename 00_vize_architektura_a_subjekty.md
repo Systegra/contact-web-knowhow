@@ -50,9 +50,21 @@ Profil (Název - většinou podle jména firmy a číslo profilu)
 ├── 02_Organizace/Firmy
 │   ├── 01_Kontakty (Vazba na osoby - Priorita, Funkce, Oddělení) + Poznámka 
 │   ├── 02_Dodatky + Skupiny dodatků
-│   ├── 03_formulas_events.md    # Syntaxe výpočtů a spouštění procedur
-│   └── 04_master_detail.md      # Jak se staví 1:N tabulky
-└── 03_user_guides/
-    ├── 01_servis_a_stroje.md    # Proces servisu, MTH, výkazů
-    ├── 02_kniha_jizd.md         # Proces evidování jízd a vyúčtování
-    └── 03_marketing_emails.md   # Šablony, odosílání, statistiky
+│   ├── 03_Tabulky
+│   ├── 04_Dokumenty
+│   ├── 05_Galerie
+│   ├── 06_Zatřídění
+│   ├── 07_Emaily
+│   └── 08_Události (vazba na Diář)
+└── 03_Osoby/
+│   ├── 01_Kontakty (Vazba na firmy - Priorita, Funkce, Oddělení) + Poznámka 
+│   ├── 02_Dodatky + Skupiny dodatků
+│   ├── 03_Tabulky
+│   ├── 04_Dokumenty
+│   ├── 05_Galerie
+│   ├── 06_Zatřídění
+│   ├── 07_Emaily
+│   └── 08_Události (vazba na Diář)
+└── 04_Diář/
+
+
