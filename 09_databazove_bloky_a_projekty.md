@@ -44,20 +44,30 @@ A. Tabulka `NOTEBLOCK` (Definice bloku)
 Slouží pro registraci a globální konfiguraci dané agendy (bloku).
 
 Field Name	Type	Description
+
 `BLOCKNAME`	WideString(21)	Systémový identifikátor bloku
+
 `NAZEV`	WideString(50)	Zobrazovaný název agendy v UI
+
 `IDENT`	WideString(10)	Kódové označení agendy
+
 `PUBLIC`	Boolean	Příznak veřejné/globální dostupnosti
+
 `BASE_SET`	BLOB Wide Memo	INI konfigurace globálního chování, UI, akcí a tabulek
+
 `FIELD_SET`	BLOB Wide Memo	INI konfigurace vlastností jednotlivých formulářových polí
+
 `CREATOR / LASTEDIT`	WideString(21)	Auditní informace o autorovi a posledním editorovi
+
 `CRDATE / EDDATE`	DateTime	Datum vytvoření a poslední úpravy
 
 B. Tabulka `NOTE` (Záznam / Projekt)
 Základní datovou jednotkou jakéhokoliv databázového bloku je Projekt (uložený v tabulce `NOTE`).
 
 Field Name	Type	Description
+
 `UID`	GUID	Unikátní identifikátor záznamu
+
 `CPCN` / `CN`	Int32	ID profilu (`CPCN`) a číslo záznamu (`CN`)
 `IDENT`	WideString(30)	Číslo zakázky / identifikátor (např. 26-008)
 `NAZEV`	WideString(250)	Název projektu / zakázky
