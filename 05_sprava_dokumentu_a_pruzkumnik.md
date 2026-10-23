@@ -94,6 +94,27 @@ Webový prohlížeč zachytí volání vlastního protokolu a zobrazí systémov
 
 Po potvrzení přebere aplikaci ShellIS.exe příkaz s argumenty, přistoupí k souboru na síťové cestě a rovnou jej otevře v příslušné asociované aplikaci (MS Word, MS Excel atd.) bez mezipaměti v adresáři stažených souborů.
 
+## X. Modul Galerie (Správa médií a vizuálních příloh)
 
+Modul **Galerie** úzce navazuje na obecnou správu dokumentů, je však architektonicky i vizuálně optimalizován pro práci s médii (obrázky, loga, fotografie provozoven, grafické podklady) vázanými k primárním subjektům[cite: 8].
+
+---
+
+### 1. Uživatelské rozhraní v CONTACT Web
+* **Záložka Galerie:** Specializovaná sekce v detailu subjektu určená pro vizuální obsah[cite: 8].
+* **Rychlé nahrávání (Drag & Drop):** Rozhraní nabízí přehlednou nahrávací zónu pro přetahování souborů myší (*„VYBERTE SOUBOR nebo přeneste soubor sem“*)[cite: 8].
+* **Miniatury a interaktivní Lightbox:** Soubory se zobrazují formou přehledných náhledů. Kliknutím na položku se otevře velký plovoucí náhled s možností listování mezi jednotlivými médii v galérii (*Zpět* / *Další*)[cite: 8].
+
+---
+
+### 2. Databázová architektura tabulky `GALERY`
+Na rozdíl od textové registratury v tabulce `DOCUMENT` využívá modul pro média dedikovanou tabulku **`GALERY`** v databázovém systému NexusDB[cite: 9]:
+
+* **Vazební identifikátory (`UID`, `ID`, `SUBJECT_UID`):** Zajišťují jednoznačné provázání multimediálního souboru s konkrétním profilem a primárním subjektem (např. ID firmy)[cite: 9].
+* **`CATEGORY`:** Slouží k logickému členění a kategorizaci položek (např. `Systegra_email`)[cite: 9].
+* **`FILE_NAME`:** Uchovává fyzickou či síťovou cestu k uloženému mediálnímu souboru (např. strukturovaná cesta na síťovém úložišti `\\10.180.200.20\Systegra\Projekty\...`)[cite: 9].
+* **`FILE_EXT`:** Standardní přípona souboru definující formát (např. `png`, `jpg`)[cite: 9].
+* **`MEDIA` & `MEMO`:** Datová BLOB pole určená pro uložení binárních dat náhledu či doplňujících poznámek k obrázku[cite: 9].
+* **`CREATOR`:** Auditní stopa zaznamenávající uživatelské jméno autora, který médium do systému vložil[cite: 9].
 
 
