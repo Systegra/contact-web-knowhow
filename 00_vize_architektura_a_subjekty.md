@@ -24,7 +24,7 @@ Celý systém je vnitřně provázán přes jednotný číselník entitních typ
 | **1** | **Organizací / Firmy (`FIRM`)** | Právnické i fyzické osoby, úřady, školy a instituce. Tvoří centrální uzel adresáře. |
 | **2** | **Osoby (`PERSON`)** | Kontaktní osoby, zaměstnanci klientů i fyzické osoby navázané na organizace či projekty. |
 | **3** | **Události (`TIMELINE` / `TIMEMEMO`)** | Aktivity, kalendářové záznamy, zápisy z jednání, úkoly, e-maily a plánované akce. |
-| **4** | **Projekty / Bloky (`NOTEBLOCK` / `NOTE`)** | Zakázky, smlouvy, stroje, obchody, servisní případy a jakékoliv procesní spisy. |
+| **4** | **Bloky / Projekty (`NOTEBLOCK` / `NOTE`)** | Zakázky, smlouvy, stroje, obchody, servisní případy a jakékoliv procesní spisy. |
 | **7** | **Uživatelé (`USERSET`)** | Interní uživatelé systému, pracovníci a nositelé přístupových práv a rolí. |
 
 ---
