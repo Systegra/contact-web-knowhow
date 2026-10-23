@@ -38,6 +38,7 @@ Architektura bloků je zkonstruována minimalisticky. Místo neustálého přid�
 ```
 A. Tabulka `NOTEBLOCK` (Definice bloku)
 Slouží pro registraci a globální konfiguraci dané agendy (bloku).
+
 Field Name	Type	Description
 `BLOCKNAME`	WideString(21)	Systémový identifikátor bloku
 `NAZEV`	WideString(50)	Zobrazovaný název agendy v UI
@@ -47,8 +48,10 @@ Field Name	Type	Description
 `FIELD_SET`	BLOB Wide Memo	INI konfigurace vlastností jednotlivých formulářových polí
 `CREATOR / LASTEDIT`	WideString(21)	Auditní informace o autorovi a posledním editorovi
 `CRDATE / EDDATE`	DateTime	Datum vytvoření a poslední úpravy
+
 B. Tabulka `NOTE` (Záznam / Projekt)
 Základní datovou jednotkou jakéhokoliv databázového bloku je Projekt (uložený v tabulce `NOTE`).
+
 Field Name	Type	Description
 `UID`	GUID	Unikátní identifikátor záznamu
 `CPCN` / `CN`	Int32	ID profilu (`CPCN`) a číslo záznamu (`CN`)
@@ -61,10 +64,12 @@ Field Name	Type	Description
 `NOTES_OWNER`	WideString(21)	Odpovědný vlastník / garanta (obchodník, projektant, technik)
 `MEMO` / `MEMOTYPE`	BLOB Memo / Int16	Hlavní textová poznámka / detail (HTML nebo plain text)
 `MEMOOWNER`	WideString(21)	Vlastník textové poznámky
+
 ---
 3. Vizuální identita a UX
 Barevné kódování agend: Každý Databázový blok má přiřazenou svou unikátní barvu v rozhraní (propisuje se do hlaviček, bočních lišt a stromového menu). Vzhledem k unifikovanému vzhledu formulářů a mřížek napříč systémem slouží barevné odlišení jako okamžitý vizuální kotvící bod (např. Stroje a zařízení = Fialová, Projekty/Zakázky = Červeno-hnědá).
 360° Pohled u klienta: Na kartě konkrétní firmy nebo osoby se v záložce Projekty zobrazují všechny navázané blokové záznamy včetně jejich aktuálních statusů, kategorií, časového průběhu a vykázaného času.
+
 ---
 4. Konfigurační model (INI soubory v `NOTEBLOCK`)
 Konfigurace chování a vzhledu každého bloku je uložena přímo v záznamu tabulky `NOTEBLOCK` ve dvou klíčových paměťových polích `BASE_SET` a `FIELD_SET`.
@@ -89,6 +94,7 @@ Parametry atributů: U jednotlivých polí (např. `NAZEV`, `STARTDATE`, `MEMOOW
 `AlarmDayPrev` / `AlarmDayNext` (upozornění před/po datu)
 Podmíněné zobrazení dodatků (`[ADD_*_CONDITION]`): Řídí dynamické zviditelnění doplňkových polí podle hodnot v jiných polích (např. zobrazení dodatku `ADD_96_80` pouze v případě, že je `Projekt.PrioritaID` v množině `0, 1, 5, 4, 7`).
 ---
+
 5. Uživatelské Akce a Makrojazyk (`[ACTION_*]`)
 V sekcích `[ACTION_Název]` v souboru `BASE_SET` lze definovat naprogramovatelná tlačítka. Tato tlačítka se v uživatelském rozhraní automaticky vykreslují v levém ovládacím panelu pod žlutým tlačítkem akcí.
 Příklad definice akce v INI:
@@ -126,9 +132,3 @@ Strukturované workflows: Díky striktně definovaným statusům (`ICONTYPE`), k
 Přístup k celému grafu: Přes relace v tabulce `LINK` a navázané tabulky má AI model okamžitý přístup ke všem e-mailům, výkazům práce, dokumentům i záznamům v Diáři spojeným s daným projektem.
 Analýza nestrukturovaných dat: Pole `MEMO` v tabulce `NOTE` v kombinaci s navázanými textovými dodatky představují ideální vstup pro LLM modely k automatické sumarizaci stavu projektu, generování nabídek nebo návrhu dalších kroků.
 ```
-
----
-
-Vygeneroval jsem kompletní dokument **`09_databazove_bloky_a_projekty.md`** se všemi podrobnostmi o databázové struktuře, vizuální koncepci, rozdílech v INI souborech i skriptovatelných akcích. 
-
-Chcete se nyní posunout k dalšímu tématu či modulu v pořadí?
