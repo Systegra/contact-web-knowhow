@@ -1,7 +1,10 @@
-# 06. Agenda Osoby (PERSON / ID 52), statusy, kategorie a B2B/B2C kontexty
+# 06. Agenda Osoby (PERSON / ID 2), statusy, kategorie a B2B/B2C kontexty
 
 Tento dokument popisuje databázovou architekturu agendy Osoby, její vazby na firmy a dokumenty, způsob kategorizace skrze pole `X` a `Y` a různé business kontexty použití v systému **Databox CONTACT Web**.
-
+Pro Dodatky v ADDITION je ID=32
+Pro Tabulky v TABROW je ID=2
+Pro Dokumenty v DOCUMENT je ID=52
+Pro Spojení v CONNECT je ID=62
 ---
 
 ## 1. Databázová architektura a struktura tabulky `PERSON`
