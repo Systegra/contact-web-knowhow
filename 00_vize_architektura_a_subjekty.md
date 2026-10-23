@@ -72,15 +72,29 @@ Profil (Název - většinou podle jména firmy a číslo profilu)
     └── 08_Události (vazba na Diář)
 
 └── 03_Osoby/
+
     ├── 01_Kontakty (Vazba na firmy - Priorita, Funkce, Oddělení) + Poznámka 
+    
     ├── 02_Dodatky + Skupiny dodatků
+    
     ├── 03_Tabulky
+    
     ├── 04_Dokumenty
+    
     ├── 05_Galerie
+    
     ├── 06_Zatřídění
+    
     ├── 07_Emaily
+    
     └── 08_Události (vazba na Diář)
 
-└── 04_Diář/
+└── 04_Diář/ ** neboli kalendář - slouží pro zápis z jednání, plánování a obecně časových poznámek s vazbou na firmy, osoby a projekty.
+
+    ├── Dva typy událostí => Aktivity, Úkoly, 
+
+    ├── Dva druhy zobrazení => Časová osa, Seznam úkolů
+
+    ├── Sdílení událostí, sdílení diářů, skupiny diářů
 
 
