@@ -1,4 +1,5 @@
-09. Databázové bloky a Projekty (`NOTEBLOCK` / ID 4)
+09. Databázové bloky a Projekty (`NOTEBLOCK` / NOTE ID 4)
+
 Tento dokument detailně popisuje architekturu, datový model, uživatelskou konfiguraci a obchodní logiku Databázových bloků a Projektů v systému Databox CONTACT Web.
 ---
 1. Architektura a koncepce Databázových bloků
