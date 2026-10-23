@@ -6,7 +6,9 @@ Tento dokument detailně popisuje architekturu, datový model, uživatelskou kon
 Databázové bloky (zkráceně Bloky) představují nejvyšší úroveň přizpůsobitelných procesních databází v systému Databox CONTACT Web. Stojí na stejné úrovni jako klíčové entitní agendy (Firmy, Osoby).
 Rozhodovací logika: Uživatelská tabulka vs. Databázový blok
 Uživatelská tabulka: Volí se pro jednoduché, ploské evidence s několika základními atributy (např. jednoduchá evidence vydaných nabídek obsahující pouze datum, částku a stav).
+
 Databázový blok: Volí se pro rozsáhlé, komplexní a procesně orientované agendy, které vyžadují celý životní cyklus, navázané pod-tabulky (režim Master-Detail), dokumenty, galerii, časový výkaz, události v Diáři a vlastní automatizované workflows (např. řízení obchodního případu od poptávky po realizaci, servisní činnosti, správa strojního parku).
+
 Typické agendy řešené přes Databázové bloky
 Projektové a Obchodní agendy:
 Obchodní případy / Příležitosti
@@ -14,11 +16,13 @@ Zakázky a Etapy
 Projekty (SW/HW vývoj, stavby)
 Marketingové kampaně
 Výběrová řízení
+
 Servisní a Majetkové agendy:
 Stroje a zařízení
 Servisní zakázky / Hotline
 Nájemní a prodejní zakázky
 Příslušenství a vybavení
+
 ---
 2. Databázový model a struktura tabulek
 Architektura bloků je zkonstruována minimalisticky. Místo neustálého přidávání pevných databázových sloupců staví na kombinaci základních stavových atributů v hlavní tabulce, doplňkových dynamických parametrů (Dodatků) a navázaných relací.
@@ -73,6 +77,7 @@ Barevné kódování agend: Každý Databázový blok má přiřazenou svou unik
 ---
 4. Konfigurační model (INI soubory v `NOTEBLOCK`)
 Konfigurace chování a vzhledu každého bloku je uložena přímo v záznamu tabulky `NOTEBLOCK` ve dvou klíčových paměťových polích `BASE_SET` a `FIELD_SET`.
+
 A. Globální nastavení: `BASE_SET`
 Řídí globální strukturu UI, záložky, použité číselníky, napojené moduly a skriptovací akce.
 `[ICONS]` & `[PRIORITY]`: Definují povolenou sadu ikonek (statusů) a priorit (kategorií) z databáze `PROFILESET` a jejich výchozí hodnoty (`DefIconType`, `DefPriority`).
@@ -85,6 +90,7 @@ A. Globální nastavení: `BASE_SET`
 `[DOCUMENT]`: Definice cesty a názvové konvence pro automatický export a ukládání dokumentů (např. `ExportDir=Projekty\[Projekt.Subjekt1]\[Projekt.Název]`).
 `[IDENT]`: Pravidla pro automatické generování číselných řad (např. `Expression=[YY]-[N.3]` vytváří kód 26-008).
 `[NOTIF_*]` & `[RIGHT]`: Matice přístupových práv, úprav a automatických notifikací pro vlastníky a uživatele při změnách v projektu či navázaných podsystémech.
+
 B. Nastavení polí: `FIELD_SET`
 Definuje chování konkrétních polí formuláře a podmíněnou logiku zobrazení.
 Parametry atributů: U jednotlivých polí (např. `NAZEV`, `STARTDATE`, `MEMOOWNER`) nastavuje vlastnosti jako:
@@ -93,8 +99,8 @@ Parametry atributů: U jednotlivých polí (např. `NAZEV`, `STARTDATE`, `MEMOOW
 `BoldValue=1` (tučné zvýraznění hodnota)
 `AlarmDayPrev` / `AlarmDayNext` (upozornění před/po datu)
 Podmíněné zobrazení dodatků (`[ADD_*_CONDITION]`): Řídí dynamické zviditelnění doplňkových polí podle hodnot v jiných polích (např. zobrazení dodatku `ADD_96_80` pouze v případě, že je `Projekt.PrioritaID` v množině `0, 1, 5, 4, 7`).
----
 
+---
 5. Uživatelské Akce a Makrojazyk (`[ACTION_*]`)
 V sekcích `[ACTION_Název]` v souboru `BASE_SET` lze definovat naprogramovatelná tlačítka. Tato tlačítka se v uživatelském rozhraní automaticky vykreslují v levém ovládacím panelu pod žlutým tlačítkem akcí.
 Příklad definice akce v INI:
