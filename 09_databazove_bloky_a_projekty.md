@@ -69,14 +69,23 @@ Field Name	Type	Description
 `UID`	GUID	Unikátní identifikátor záznamu
 
 `CPCN` / `CN`	Int32	ID profilu (`CPCN`) a číslo záznamu (`CN`)
+
 `IDENT`	WideString(30)	Číslo zakázky / identifikátor (např. 26-008)
+
 `NAZEV`	WideString(250)	Název projektu / zakázky
+
 `STARTDATE` / `ENDDATE`	Date	Časové ohraničení projektu (datum zahájení a ukončení)
+
 `ICONTYPE`	Int16	Status projektu (odkazuje na ikonku statusu z profilu)
+
 `PRIORITY`	Int16	Kategorie projektu (barva a klasifikace záznamu)
+
 `ID1`, `CPCX1`, `CX1`	Int16 / Int32	Primary Vazba ID 1 na hlavního klienta / firmu / osobu
+
 `NOTES_OWNER`	WideString(21)	Odpovědný vlastník / garanta (obchodník, projektant, technik)
+
 `MEMO` / `MEMOTYPE`	BLOB Memo / Int16	Hlavní textová poznámka / detail (HTML nebo plain text)
+
 `MEMOOWNER`	WideString(21)	Vlastník textové poznámky
 
 ---
